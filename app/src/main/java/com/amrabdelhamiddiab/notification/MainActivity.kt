@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "Notification Channel"
             val descriptionText = "Notification Description"
-            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val importance = NotificationManager.IMPORTANCE_HIGH
             val channel: NotificationChannel =
                 NotificationChannel(CHANNEL_ID, name, importance).apply {
                     description = descriptionText
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             .setLargeIcon(bitmapLargeIcon)
             .setContentIntent(pendingIntent)
             .setStyle(NotificationCompat.BigPictureStyle().bigPicture(bitmap))
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
         with(NotificationManagerCompat.from(this)) {
             notify(notificationId, builder.build())
         }
